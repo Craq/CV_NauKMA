@@ -11,7 +11,7 @@ def project_point(p: np.array, f: int) -> np.array:
     projection_matrix = np.array([
         [f, 0, 0, 0],
         [0, f, 0, 0],
-        [0, 0, 0, 1]
+        [0, 0, 1, 0]
     ])
     p = np.concatenate((p, np.zeros((1,1))),1).T
     return np.dot(projection_matrix, p).T[:,:2]
